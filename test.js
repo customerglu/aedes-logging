@@ -176,7 +176,7 @@ test('avoid logging every published message with an option', function (t) {
 
   var client
   var dest = sink(function (line, enc, cb) {
-    t.notEqual(line.msg, 'published', 'msg matches')
+    t.not(line.msg, 'published', 'msg matches')
     cb()
   })
   startServer(dest, {
@@ -185,8 +185,8 @@ test('avoid logging every published message with an option', function (t) {
     t.error(err)
     client = mqtt.connect(server.address())
     client.publish('hello', 'world')
-    client.end()
     t.teardown(function (cb) {
+      client.end()
       server.close(cb)
     })
     t.teardown(function (cb) {
