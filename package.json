@@ -1,6 +1,6 @@
 {
   "name": "@customerglu/aedes-logging",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Logging module for Aedes, based on Pino with latest dependencies",
   "main": "index.js",
   "scripts": {
